@@ -121,7 +121,7 @@ function App() {
         <>
           {recurringTasks.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Recurring Schedule</h2>
+              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Recurring tasks</h2>
               {recurringTasks.map(t => (
                 <TaskCard key={t.rowId} task={t} onComplete={handleComplete} />
               ))}
@@ -130,7 +130,7 @@ function App() {
 
           {oneTimeTasks.length > 0 && (
             <section className="pb-10">
-              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">One-Time Operations</h2>
+              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">One-Time tasks</h2>
               {oneTimeTasks.map(t => (
                 <TaskCard key={t.rowId} task={t} onComplete={handleComplete} />
               ))}
