@@ -4,6 +4,19 @@ A high-performance, AI-powered task management system designed specifically for 
 
 ---
 
+## 📊 Task Assignment & Reference Sheet
+
+To understand why tasks are assigned, how duties are delegated, and how scores/penalties and categories are structured, refer to the master Google Sheet:
+
+- 🔗 **Reference Google Sheet**: [SVM Task Assignment & Management Sheet](https://docs.google.com/spreadsheets/d/1QWwRTnvTKDPoVUBg8kOB_HsGrALlK60I8oj4S67RcbA/edit?usp=sharing)
+
+This spreadsheet acts as the primary data source and operational blueprint, tracking task assignments, types, categories, scoring/penalties, and completion statuses.
+
+> [!IMPORTANT]
+> **User Authentication / Login Notice**: **Only the user email and password (PIN) listed in this Google Sheet are valid for login.** Any login attempts using credentials not recorded in the sheet will be denied.
+
+---
+
 ## ✨ Features
 
 -   **AI Priority Sync**: Integrates with **Google Gemini AI** to analyze pending tasks and suggest the most impactful one to tackle first.
@@ -62,13 +75,16 @@ A high-performance, AI-powered task management system designed specifically for 
     npm run dev
     ```
 
+### 🔐 User Login
+Only user emails and passwords/PINs configured within the [Reference Google Sheet](https://docs.google.com/spreadsheets/d/1QWwRTnvTKDPoVUBg8kOB_HsGrALlK60I8oj4S67RcbA/edit?usp=sharing) are valid for signing in to the application.
+
 ---
 
 ## ☁️ Backend (Google Apps Script) Setup
 
-The backend logic resides in a Google Apps Script linked to a Google Sheet.
+The backend logic resides in a Google Apps Script linked to the master Google Sheet.
 
-1.  Create a Google Sheet with headers: `taskName`, `score`, `type`, `status`, etc.
+1.  Open or duplicate the [SVM Reference Google Sheet](https://docs.google.com/spreadsheets/d/1QWwRTnvTKDPoVUBg8kOB_HsGrALlK60I8oj4S67RcbA/edit?usp=sharing) (headers: `taskName`, `score`, `type`, `status`, etc.).
 2.  Open **Extensions > Apps Script**.
 3.  Implement `doGet(e)` to fetch tasks and `doPost(e)` to update task status.
 4.  Deploy as a **Web App** with access set to "Anyone".
